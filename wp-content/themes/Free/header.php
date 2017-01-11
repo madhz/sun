@@ -39,9 +39,9 @@
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
+	<script src="<?php bloginfo( 'template_directory' ); ?>/js/jquery.gmap.min.js"></script>
 	<!-- end: CSS -->
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+ <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

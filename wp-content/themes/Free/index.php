@@ -2,10 +2,9 @@
 <?php/*
 * Template Name: index
 */
-?>sdfsdf
+?>
 
 <body>
-	echo dfsdfksdfj
 	<!--start: Wrapper -->
 	<div id="wrapper">
 		
