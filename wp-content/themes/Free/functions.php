@@ -13,7 +13,21 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'free
     'settings' => 'freeme_logo', 
 ) ) );
 }
-add_action( 'customize_register', 'freemelogo_theme_customizer' );
+function footer_freemelogo_theme_customizer( $wp_customize ) {
+    // Fun code will go here
+    $wp_customize->add_section( 'footer_freeme_logo_section' , array(
+    'title'       => __( 'footer_Logo ', 'footer_freemeslug' ),
+    'priority'    => 30,
+    'description' => 'Upload a logo to replace the default site name and description in the header',
+) );
+$wp_customize->add_setting( 'footer_freeme_logo' );
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'footer_freeme_logo', array(
+    'label'    => __( 'Logo', 'footer_freemeslug' ),
+    'section'  => 'footer_freeme_logo_section',
+    'settings' => 'footer_freeme_logo', 
+) ) );
+}
+add_action( 'customize_register', 'footer_freemelogo_theme_customizer' );
 
 function freemelogo_menus()
 {

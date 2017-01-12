@@ -13,7 +13,7 @@
 						<!-- start: Footer Menu Logo -->
 						<div class="span1">
 							<div id="footer-menu-logo">
-								<a href="#"><img src="img/logo-footer-menu.png" alt="logo" /></a>
+								  <a href='<?php the_permalink(); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'footer_freeme_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
 							</div>
 						</div>
 						<!-- end: Footer Menu Logo -->

@@ -173,7 +173,7 @@ get_header();?>
 				</ul>
 			</div>
 			<!-- end: Social Sites -->
-<?php echo get_template_directory_uri() .'/contactsave.php'; ?>
+
 		</div>
 		<?php
 get_footer();
