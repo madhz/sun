@@ -75,17 +75,18 @@ get_header();?>
 			<!-- start: Contact Form -->
 			<div class="span4">
 				<div class="title"><h4>Contact Form</h4></div>
+				<div id="errmsg"></div>
 
 				<!-- start: Contact Form -->
 				<div id="contact-form">
 					
-					<form method="post" action="">
-						
+					<!-- <form method="post" action="http://localhost/wordpressdemo/wp-content/themes/Free/contactsave.php"> -->
+						<form method="post">
 						<fieldset>
 							<div class="clearfix">
 								<label for="name"><span>Name:</span></label>
 								<div class="input">
-									<input tabindex="1" size="18" id="name" name="name" type="text" value="">
+									<input tabindex="1" size="18" id="uname" name="uname" type="text" value="">
 								</div>
 							</div>
 
@@ -104,7 +105,7 @@ get_header();?>
 							</div>
 
 							<div class="actions">
-								<button tabindex="3" type="submit" class="btn btn-succes btn-large">Send message</button>
+								<input name="submit" tabindex="3" id="submit" type="button" value="Send message">
 							</div>
 						</fieldset>
 					
@@ -172,10 +173,37 @@ get_header();?>
 				</ul>
 			</div>
 			<!-- end: Social Sites -->
-
+<?php echo get_template_directory_uri() .'/contactsave.php'; ?>
 		</div>
 		<?php
 get_footer();
 ?>
 		</div>
 		</div>
+		<script>
+		$(document).ready(function(){
+			$("#submit").click(function(){
+			var data=$("form").serialize();
+
+			$.ajax({
+				type:"post",
+				data:data,
+				url:"<?php echo get_template_directory_uri() .'/contactsave.php'; ?>",
+				success:function(data){
+
+					if(data==true){
+							$("#errmsg").css("color","green");
+						$("#errmsg").html("contact added successfully");
+					
+					}
+					else
+					{
+							$("#errmsg").css("color","red");
+						$("#errmsg").html("provide proper information");
+
+					}
+				}
+			});
+			})
+		})
+		</script>
